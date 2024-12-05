@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Пости
+{%endblock%}
+
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">
+    Пости
+  </h1>
+  <ul>
+    {% for post in posts %}
+        <li>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <small>Дата створення: {{ post.created_at }}</small>
+        </li>
+    {% endfor %}
+  </ul>
+  <a href="/contact">До контактів</a>
+</div>
+
+{%endblock%}

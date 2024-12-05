@@ -47,15 +47,10 @@ footer {
   padding: 15px;
   border-top: 1px solid #dee2e6;
 }
-
-html,
 body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: rgb(var(--bs-tertiary-color-rgb));
 }
 
 .content {

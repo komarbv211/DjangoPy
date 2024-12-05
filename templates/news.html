@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  
+{%endblock%}
+
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">
+    Новини
+  </h1>
+  <!-- Карусель новин -->
+  <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner container">
+      <!-- Перший елемент каруселі -->
+      <div class="carousel-item active">
+        <div class="d-flex align-items-center">
+          <div class="col-md-6">
+            <img
+              src="/static/image/1_8b0e4451b81addf960d3ca3ad095e524_650x410.jpg"
+              class="carousel-img"
+              alt="Новина 1"
+            />
+          </div>
+          <div class="col-md-6 px-4">
+            <h5 class="card-title">Новина 1</h5>
+            <p class="card-text text-muted">Короткий опис новини.</p>
+            <a href="/news/1" class="btn btn-primary">Детальніше</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Другий елемент каруселі -->
+      <div class="carousel-item">
+        <div class="d-flex align-items-center">
+          <div class="col-md-6">
+            <img
+              src="/static/image/671c54220c845.jpg"
+              class="carousel-img"
+              alt="Новина 2"
+            />
+          </div>
+          <div class="col-md-6 px-4">
+            <h5 class="card-title">Новина 2</h5>
+            <p class="card-text text-muted">Короткий опис новини.</p>
+            <a href="/news/2" class="btn btn-primary">Детальніше</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Третій елемент каруселі -->
+      <div class="carousel-item">
+        <div class="d-flex align-items-center">
+          <div class="col-md-6">
+            <img
+              src="/static/image/image.jpg"
+              class="carousel-img"
+              alt="Новина 3"
+            />
+          </div>
+          <div class="col-md-6 px-4">
+            <h5 class="card-title">Новина 3</h5>
+            <p class="card-text text-muted">Короткий опис новини.</p>
+            <a href="/news/3" class="btn btn-primary">Детальніше</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Кнопки управління -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#newsCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Попередня</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#newsCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Наступна</span>
+    </button>
+  </div>
+  <div class="container content">
+    <h1 class="text-center">Новини</h1>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Дата</th>
+          <th scope="col">Назва</th>
+          <th scope="col">Короткий опис</th>
+          <th scope="col">Автор</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>01.12.2024</td>
+          <td>Запуск нового проекту</td>
+          <td>Команда успішно презентувала новий проект.</td>
+          <td>Іван Іваненко</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>02.12.2024</td>
+          <td>Інтерв'ю з експертом</td>
+          <td>Розмова з експертом у галузі IT.</td>
+          <td>Марія Петренко</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>03.12.2024</td>
+          <td>Нові тенденції</td>
+          <td>Огляд сучасних тенденцій у технологіях.</td>
+          <td>Олег Сидоренко</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>04.12.2024</td>
+          <td>Міжнародна конференція</td>
+          <td>Деталі участі у міжнародній конференції.</td>
+          <td>Наталія Тарасенко</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a href="/contact">До контактів</a>
+  <a href="/">На головну</a>
+</div>
+{%endblock%}
