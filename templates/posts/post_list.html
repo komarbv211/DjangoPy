@@ -1,25 +1,69 @@
 {% extends "layout.html" %}
 
 {% block title %}
-  Пости
-{%endblock%}
-
+    Список постів
+{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h1 class="text-center">
-    Пости
-  </h1>
-  <ul>
-    {% for post in posts %}
-        <li>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
-            <small>Дата створення: {{ post.created_at }}</small>
-        </li>
-    {% endfor %}
-  </ul>
-  <a href="/contact">До контактів</a>
+<div class="container my-4">
+    <h1 class="text-center">Пости</h1>
+    <a href="{% url 'post_create' %}" class="btn btn-primary mb-3">Додати новий пост</a>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Назва</th>
+                <th>Контент</th>
+                <th>Дата створення</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.content }}</td>
+                <td>{{ post.created_at }}</td>
+                <td>
+                    <a href="{% url 'post_edit' post.pk %}" class="btn btn-warning btn-sm">Редагувати</a>
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal" 
+                        data-id="{{ post.pk }}">Видалити</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
-{%endblock%}
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Підтвердження видалення</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+            <div class="modal-body">
+                Ви дійсно хочете видалити цей пост?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+                <form id="deleteForm" method="POST" action="">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Видалити</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const postId = button.getAttribute('data-id');
+            const deleteForm = document.getElementById('deleteForm');
+            deleteForm.action = `{% url 'post_delete' 0 %}`.replace('0', postId);
+        });
+    });
+</script>
+{% endblock %}
