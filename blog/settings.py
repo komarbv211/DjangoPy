@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog_db',
-        'USER': 'root', 
-        'PASSWORD': 'Dron_123',
-        'HOST': 'localhost',
-        'PORT': '3306', 
+        'NAME': 'blogpv212db_satmachine',
+        'USER': 'blogpv212db_satmachine', 
+        'PASSWORD': '277b8309a7c5eb783c6b38cc6ed95f66537f9af5',
+        'HOST': 'yd7un.h.filess.io',
+        'PORT': '3305', 
         'OPCIONS':{'sql_mode':'traditional'}
     }
 }

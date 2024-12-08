@@ -8,12 +8,12 @@
         {%block title%}
         {%endblock%}
     </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <link
       rel="stylesheet"
       href={%static 'bootstrap/css/bootstrap.min.css'%}
     />
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
-    
 </head>
 <body>
     <header data-bs-theme="dark">
@@ -30,9 +30,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Контакти</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/posts">Пости</a>
                 </li>
                 </ul>
                 <ul class="navbar-nav">
