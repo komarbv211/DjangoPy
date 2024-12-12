@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-
+{% load widget_tweaks %}
 {% block title %}
   Реєстрація
 {% endblock %}
@@ -11,26 +11,29 @@
         {% csrf_token %}
         
         <div class="mb-3">
-            <label for="firstname" class="form-label">Ім'я</label>
-            <input type="text" class="form-control" id="firstname" name="firstname" required minlength="3" placeholder="Введіть ваше ім'я">
+            <label for="id_username" class="form-label">Ім'я</label>
+            {{form.username|add_class:"form-control"|attr:"required"}}
+            {% comment %} <input type="text" class="form-control" id="firstname" name="firstname" required minlength="3" placeholder="Введіть ваше ім'я"> {% endcomment %}
             <div class="invalid-feedback">Будь ласка, введіть ваше ім'я (мінімум 3 символи).</div>
         </div>
 
-        <div class="mb-3">
+        {% comment %} <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" required placeholder="Введіть вашу email-адресу">
             <div class="invalid-feedback">Будь ласка, введіть правильний email.</div>
-        </div>
+        </div> {% endcomment %}
 
         <div class="mb-3">
-            <label for="password" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="password" name="password" required minlength="6" placeholder="Придумайте пароль">
+            <label for="id_password1" class="form-label">Пароль</label>
+            {{form.password1|add_class:"form-control"|attr:"required"}}
+            {% comment %} <input type="password" class="form-control" id="password" name="password" required minlength="6" placeholder="Придумайте пароль"> {% endcomment %}
             <div class="invalid-feedback">Пароль має містити щонайменше 6 символів.</div>
         </div>
 
         <div class="mb-3">
-            <label for="confirmPassword" class="form-label">Підтвердження паролю</label>
-            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required placeholder="Підтвердіть пароль">
+            <label for="id_password2" class="form-label">Підтвердження паролю</label>
+            {{form.password2|add_class:"form-control"|attr:"required"}}
+            {% comment %} <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required placeholder="Підтвердіть пароль"> {% endcomment %}
             <div class="invalid-feedback">Паролі не співпадають.</div>
         </div>
 
@@ -46,11 +49,14 @@
     </form>
 </div>
 
+{% endblock %}
+{% block scripts %}
+   
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registrationForm');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
+    const password = document.getElementById('id_password1');
+    const confirmPassword = document.getElementById('id_password2');
     const termsCheckbox = document.getElementById('terms');
     const submitButton = document.getElementById('submitBtn');
 
