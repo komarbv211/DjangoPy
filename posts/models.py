@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 class Post(models.Model):
     title = models.CharField(max_length=200)  
@@ -7,6 +8,7 @@ class Post(models.Model):
     slug = models.SlugField(null=True, unique=True, blank=True)                
     created_at = models.DateTimeField(auto_now_add=True) 
     image = models.URLField(null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
 
     def save(self, *args, **kwargs):
         if not self.slug: 

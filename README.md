@@ -46,3 +46,4 @@ py manage.py shell
 .venv\Scripts\activate.bat
 cd blog
 py manage.py runserver 9178
+deactivate
