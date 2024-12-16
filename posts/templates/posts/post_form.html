@@ -7,7 +7,7 @@
 {% block content %}
   <div class="container mt-5">
     <h1 class="mb-4">Створити новий пост</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="mb-3">
         {{ form.as_p }}

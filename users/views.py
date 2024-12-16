@@ -1,8 +1,7 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import  login
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import logout
 # Реєстрація
 def register_view(request):
     if request.method == 'POST':

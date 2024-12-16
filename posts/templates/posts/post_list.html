@@ -30,7 +30,7 @@
             {% for post in posts %}
             <tr class='post'>
                 <td class=>
-                    <img src="{% if post.image %}{{ post.image }}{% else %}/static/image/istockphoto.png{% endif %}" 
+                    <img src="{% if post.image %}{{ post.image.url }}{% else %}/media/istockphoto.png{% endif %}" 
                     class="img-thumbnail" alt="Новина"/>
                 </td>
                 <td>{{ post.title }}</td>

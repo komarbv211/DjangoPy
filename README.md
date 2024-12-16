@@ -25,6 +25,7 @@ admin
 SuperAdminKrot1-.venv\Scripts\activate.bat
 pip install mysqlclient
 pip install mariadb
+pip install django-widget-tweaks
 cd blog
 python manage.py migrate
 
@@ -47,3 +48,5 @@ py manage.py shell
 cd blog
 py manage.py runserver 9178
 deactivate
+
+pip install Pillow
