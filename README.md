@@ -4,6 +4,8 @@ code .
 Install 
 Django
 vscode-icons  
+
+py -m venv .venv
 .venv\Scripts\activate.bat
 py -m pip install Django
 py -m pip install -U pip

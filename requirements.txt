@@ -1,0 +1,6 @@
+Django
+mysqlclient
+mariadb
+django-widget-tweaks
+Pillow
+python-decouple
