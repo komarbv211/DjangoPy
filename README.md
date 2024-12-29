@@ -50,3 +50,4 @@ py manage.py runserver 9178
 deactivate
 
 pip install Pillow
+pip install python-decouple
