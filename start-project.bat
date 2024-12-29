@@ -1,8 +1,5 @@
 @echo off
 
-:: Clone the repository
-echo Cloning the repository...
-git clone https://github.com/komarbv211/DjangoPy
 cd DjangoPy
 
 :: Create the virtual environment
