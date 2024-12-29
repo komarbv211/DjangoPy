@@ -1,17 +1,16 @@
 @echo off
 
-cd DjangoPy
-
 :: Create the virtual environment
 echo Creating virtual environment...
 py -m venv .venv
 
 :: Activate the virtual environment
 echo Activating virtual environment...
-.venv\Scripts\activate.bat
+call .venv\Scripts\activate.bat
 
 :: Install dependencies
 echo Installing dependencies...
+pip install Django
 py -m pip install -U pip
 pip install -r requirements.txt
 
@@ -19,9 +18,9 @@ pip install -r requirements.txt
 echo Applying migrations...
 python manage.py migrate
 
-:: Run the Django server
-echo Running Django server on port 8000...
-python manage.py runserver
+:: Run the Django server in a new window
+echo Running Django server on port 9178...
+py manage.py runserver 9178
 
 :: Deactivate virtual environment after server stops
 echo Press Ctrl+C to stop the server.
